@@ -6,7 +6,6 @@ body {
 }
 
 * {
-    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,18 +15,16 @@ body {
 
 // Style navbar
 
-nav {
+.navbar {
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: 'Poppins', sans-serif;
-    // background-color: transparent;
-    background-color: $color-back;
+    // background-color: $color-back;
     transition: all 0.5s ease-in-out;
     min-height: 8vh;
     position: fixed;
     width: 100%;
-    // border: $border-standard;
 
     .logo {
         color: $color-nav;
@@ -43,7 +40,10 @@ nav {
         justify-content: space-between;
         width: 50%;
 
-        // border: $border-standard;
+        li {
+            list-style: none;
+        }
+
         a {
             text-decoration: none;
             font-size: 14px;
@@ -53,28 +53,26 @@ nav {
 
             &:hover {
                 text-decoration: underline;
-                // transition: all 0.3s ease-in-out;
             }
         }
+    }
 
-        li {
-            list-style: none;
+    .burger {
+        display: none;
+        cursor: pointer;
+
+        div {
+            background-color: $color-nav;
+            width: 25px;
+            height: 3px;
+            margin: 5px;
+            transition: all 0.3s ease;
         }
     }
 }
 
-.burger {
-    display: none;
-    cursor: pointer;
 
-    div {
-        background-color: $color-nav;
-        width: 25px;
-        height: 3px;
-        margin: 5px;
-        transition: all 0.3s ease;
-    }
-}
+
 
 @media screen and (max-width: 1024px) {
     .nav-links {
@@ -82,41 +80,46 @@ nav {
     }
 }
 
-@media screen and (max-width: 768px) {
+@media all and (max-width: 768px) {
     body {
         overflow-x: hidden;
     }
 
-    nav {
+    .navbar {
         justify-content: space-between;
-
         .nav-links {
             position: absolute;
             right: 0;
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
             height: 92vh;
             width: 100%;
-            top: 8vh;
+            top: 9vh;
             align-items: center;
+
             background-color: $color-back;
             transform: translateX(100%);
-            transition: all 0.5s ease-in;
+            transition: transform 0.5s ease-in;
+            
 
             li {
                 opacity: 0;
+                
             }
         }
-    }
 
-    .burger {
-        display: block;
+        .burger {
+            display: block;
+        }
+
+        .nav-change {
+            transform: translateX(0%);
+        }
     }
 }
 
-.nav-active {
-    transform: translateX(0%);
-}
+
 
 @keyframes navLinkFade {
     from {
@@ -147,6 +150,28 @@ nav {
 
 // Style about-me
 
+// Style intro
+
+.intro {
+
+    background-image: url("https://sobify.com/wp-content/uploads/2014/06/Colorful-Dark-Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 45vh;
+    padding-bottom: 50vh;
+    text-align: center;
+
+    h1 {
+        font-weight: 600;
+        color: $color-back;
+    }
+
+    p {
+        color: green;
+        font-weight: lighter;
+    }
+}
 
 .about-detail {
     display: flex;
@@ -203,26 +228,7 @@ nav {
     }
 }
 
-// Style intro
-.intro {
 
-    // background-image: url("https://sobify.com/wp-content/uploads/2014/06/Colorful-Dark-Background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding-top: 45vh;
-    padding-bottom: 50vh;
-    text-align: center;
-
-    h1 {
-        font-weight: 600;
-    }
-
-    p {
-        color: green;
-        font-weight: lighter;
-    }
-}
 
 // Style projects
 
@@ -241,14 +247,15 @@ nav {
 
     .project-container {
         margin-top: 8vh;
+        padding: 0 8vw;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         grid-gap: 20px;
         justify-items: center;
 
         .project-pic {
-            height: 220px;
-            max-width: 100%;
+            height: auto;
+            width: 100%;
             border-radius: 10px;
             border: $border-standard;
         }

@@ -9,48 +9,46 @@ body {
   box-sizing: border-box;
 }
 
-nav {
+.navbar {
   display: flex;
   justify-content: space-around;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  background-color: #e0ebe8;
   transition: all 0.5s ease-in-out;
   min-height: 8vh;
   position: fixed;
   width: 100%;
 }
-nav .logo {
+.navbar .logo {
   color: #0c9b9b;
   padding: 1vh;
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 20px;
 }
-nav .nav-links {
+.navbar .nav-links {
   display: flex;
   justify-content: space-between;
   width: 50%;
 }
-nav .nav-links a {
+.navbar .nav-links li {
+  list-style: none;
+}
+.navbar .nav-links a {
   text-decoration: none;
   font-size: 14px;
   letter-spacing: 3px;
   font-weight: bold;
   color: #0c9b9b;
 }
-nav .nav-links a:hover {
+.navbar .nav-links a:hover {
   text-decoration: underline;
 }
-nav .nav-links li {
-  list-style: none;
-}
-
-.burger {
+.navbar .burger {
   display: none;
   cursor: pointer;
 }
-.burger div {
+.navbar .burger div {
   background-color: #0c9b9b;
   width: 25px;
   height: 3px;
@@ -63,39 +61,38 @@ nav .nav-links li {
     width: 70%;
   }
 }
-@media screen and (max-width: 768px) {
+@media all and (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
 
-  nav {
+  .navbar {
     justify-content: space-between;
   }
-  nav .nav-links {
+  .navbar .nav-links {
     position: absolute;
     right: 0;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     height: 92vh;
     width: 100%;
-    top: 8vh;
+    top: 9vh;
     align-items: center;
     background-color: #e0ebe8;
     transform: translateX(100%);
-    transition: all 0.5s ease-in;
+    transition: transform 0.5s ease-in;
   }
-  nav .nav-links li {
+  .navbar .nav-links li {
     opacity: 0;
   }
-
-  .burger {
+  .navbar .burger {
     display: block;
   }
+  .navbar .nav-change {
+    transform: translateX(0%);
+  }
 }
-.nav-active {
-  transform: translateX(0%);
-}
-
 @keyframes navLinkFade {
   from {
     opacity: 0;
@@ -114,6 +111,24 @@ nav .nav-links li {
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.intro {
+  background-image: url("https://sobify.com/wp-content/uploads/2014/06/Colorful-Dark-Background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 45vh;
+  padding-bottom: 50vh;
+  text-align: center;
+}
+.intro h1 {
+  font-weight: 600;
+  color: #e0ebe8;
+}
+.intro p {
+  color: green;
+  font-weight: lighter;
 }
 
 .about-detail {
@@ -155,22 +170,6 @@ nav .nav-links li {
   background-color: #4f4f4f;
 }
 
-.intro {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  padding-top: 45vh;
-  padding-bottom: 50vh;
-  text-align: center;
-}
-.intro h1 {
-  font-weight: 600;
-}
-.intro p {
-  color: green;
-  font-weight: lighter;
-}
-
 .projects {
   text-align: center;
   margin-top: -8vh;
@@ -183,14 +182,15 @@ nav .nav-links li {
 }
 .projects .project-container {
   margin-top: 8vh;
+  padding: 0 8vw;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   grid-gap: 20px;
   justify-items: center;
 }
 .projects .project-container .project-pic {
-  height: 220px;
-  max-width: 100%;
+  height: auto;
+  width: 100%;
   border-radius: 10px;
   border: 1px solid black;
 }
