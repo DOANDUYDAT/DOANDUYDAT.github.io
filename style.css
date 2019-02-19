@@ -1,0 +1,202 @@
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #e0ebe8;
+  transition: all 0.5s ease-in-out;
+  min-height: 8vh;
+  position: fixed;
+  width: 100%;
+}
+nav .logo {
+  color: #0c9b9b;
+  padding: 1vh;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 20px;
+}
+nav .nav-links {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+nav .nav-links a {
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #0c9b9b;
+}
+nav .nav-links a:hover {
+  text-decoration: underline;
+}
+nav .nav-links li {
+  list-style: none;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  background-color: #0c9b9b;
+  width: 25px;
+  height: 3px;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media screen and (max-width: 1024px) {
+  .nav-links {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+  nav .nav-links {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    height: 92vh;
+    width: 100%;
+    top: 8vh;
+    align-items: center;
+    background-color: #e0ebe8;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in;
+  }
+  nav .nav-links li {
+    opacity: 0;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+.nav-active {
+  transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+.about-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #e0ebe8;
+  padding: 8vh 0;
+}
+
+.about-me {
+  width: 40%;
+}
+
+.skills {
+  width: 30%;
+  line-height: 2em;
+}
+
+.progress-bar h6 {
+  font-size: 1rem;
+  font-weight: 550;
+}
+.progress-bar .progress-bar-lt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progress-bar-skills {
+  background-color: lightgray;
+  border-radius: 12px;
+  transition: all 1.6s ease-out;
+}
+.progress-bar-skills .progress-bar-line {
+  height: 6px;
+  border-radius: 12px;
+  background-color: #4f4f4f;
+}
+
+.intro {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 45vh;
+  padding-bottom: 50vh;
+  text-align: center;
+}
+.intro h1 {
+  font-weight: 600;
+}
+.intro p {
+  color: green;
+  font-weight: lighter;
+}
+
+.projects {
+  text-align: center;
+  margin-top: -8vh;
+  padding-top: 8vh;
+}
+.projects h2 {
+  padding-top: 8vh;
+  color: #0c9b9b;
+  font-weight: normal;
+}
+.projects .project-container {
+  margin-top: 8vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 20px;
+  justify-items: center;
+}
+.projects .project-container .project-pic {
+  height: 220px;
+  max-width: 100%;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+
+.services {
+  font-size: 40px;
+}
+
+/*# sourceMappingURL=style.css.map */

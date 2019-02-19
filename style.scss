@@ -1,0 +1,263 @@
+@import 'variables';
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+* {
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+// Style navbar
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    // background-color: transparent;
+    background-color: $color-back;
+    transition: all 0.5s ease-in-out;
+    min-height: 8vh;
+    position: fixed;
+    width: 100%;
+    // border: $border-standard;
+
+    .logo {
+        color: $color-nav;
+        padding: 1vh;
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-size: 20px;
+        // border: $border-standard;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+
+        // border: $border-standard;
+        a {
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: $color-nav;
+
+            &:hover {
+                text-decoration: underline;
+                // transition: all 0.3s ease-in-out;
+            }
+        }
+
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+
+    div {
+        background-color: $color-nav;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    nav {
+        justify-content: space-between;
+
+        .nav-links {
+            position: absolute;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            height: 92vh;
+            width: 100%;
+            top: 8vh;
+            align-items: center;
+            background-color: $color-back;
+            transform: translateX(100%);
+            transition: all 0.5s ease-in;
+
+            li {
+                opacity: 0;
+            }
+        }
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle {
+    .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .line2 {
+        opacity: 0;
+    }
+
+    .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+
+// Style about-me
+
+
+.about-detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: $color-back;
+    // border: $border-standard;
+    padding: 8vh 0;
+
+}
+
+.about-me {
+
+    // text-align: start;
+    width: 40%;
+    // border: $border-standard;
+}
+
+.skills {
+
+    width: 30%;
+    line-height: 2em;
+    // height: 40%;
+    // border: $border-standard;
+}
+
+.progress-bar {
+
+    // border: $border-standard;   
+    h6 {
+        font-size: 1rem;
+        font-weight: 550;
+    }
+
+    .progress-bar-lt {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.progress-bar-skills {
+    background-color: lightgray;
+    border-radius: 12px;
+    transition: all 1.6s ease-out;
+
+    .progress-bar-line {
+
+        height: 6px;
+        border-radius: 12px;
+        background-color: $color-back2;
+
+    }
+}
+
+// Style intro
+.intro {
+
+    // background-image: url("https://sobify.com/wp-content/uploads/2014/06/Colorful-Dark-Background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 45vh;
+    padding-bottom: 50vh;
+    text-align: center;
+
+    h1 {
+        font-weight: 600;
+    }
+
+    p {
+        color: green;
+        font-weight: lighter;
+    }
+}
+
+// Style projects
+
+.projects {
+    text-align: center;
+    // border: $border-standard;
+    margin-top: -8vh;
+    padding-top: 8vh;
+
+    h2 {
+        padding-top: 8vh;
+        color: $color-nav;
+        font-weight: normal;
+        // border: $border-standard;
+    }
+
+    .project-container {
+        margin-top: 8vh;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-gap: 20px;
+        justify-items: center;
+
+        .project-pic {
+            height: 220px;
+            max-width: 100%;
+            border-radius: 10px;
+            border: $border-standard;
+        }
+    }
+}
+
+
+// Style services
+
+.services {
+    font-size: 40px;
+}
