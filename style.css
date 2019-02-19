@@ -15,7 +15,7 @@ body {
   align-items: center;
   font-family: "Poppins", sans-serif;
   transition: all 0.5s ease-in-out;
-  min-height: 8vh;
+  height: 8vh;
   position: fixed;
   width: 100%;
 }
@@ -61,7 +61,7 @@ body {
     width: 70%;
   }
 }
-@media all and (max-width: 768px) {
+@media screen and (max-width: 768px) {
   body {
     overflow-x: hidden;
   }
@@ -77,7 +77,7 @@ body {
     justify-content: space-around;
     height: 92vh;
     width: 100%;
-    top: 9vh;
+    top: 8vh;
     align-items: center;
     background-color: #e0ebe8;
     transform: translateX(100%);
@@ -175,10 +175,27 @@ body {
   margin-top: -8vh;
   padding-top: 8vh;
 }
-.projects h2 {
+.projects .project-header h2 {
   padding-top: 8vh;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 15px;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: capitalize;
   color: #0c9b9b;
-  font-weight: normal;
+  z-index: -1;
+}
+.projects .project-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  width: 50px;
+  height: 2px;
+  background-color: #0c9b9b;
+  box-sizing: border-box;
 }
 .projects .project-container {
   margin-top: 8vh;
@@ -196,7 +213,33 @@ body {
 }
 
 .services {
-  font-size: 40px;
+  padding: 9vh 5vw;
+  text-align: center;
+}
+.services .service-header {
+  font-size: 1.5em;
+}
+.services .service-header h2 {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 15px;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #0c9b9b;
+  padding-top: 8vh;
+  z-index: -1;
+}
+.services .service-header h2::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  width: 50px;
+  height: 2px;
+  background-color: #0c9b9b;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=style.css.map */

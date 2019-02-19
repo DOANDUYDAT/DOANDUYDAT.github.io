@@ -1,4 +1,4 @@
-@import 'variables';
+@import 'config';
 
 html,
 body {
@@ -22,7 +22,7 @@ body {
     font-family: 'Poppins', sans-serif;
     // background-color: $color-back;
     transition: all 0.5s ease-in-out;
-    min-height: 8vh;
+    height: 8vh;
     position: fixed;
     width: 100%;
 
@@ -80,13 +80,14 @@ body {
     }
 }
 
-@media all and (max-width: 768px) {
+@media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
     }
 
     .navbar {
         justify-content: space-between;
+
         .nav-links {
             position: absolute;
             right: 0;
@@ -95,17 +96,17 @@ body {
             justify-content: space-around;
             height: 92vh;
             width: 100%;
-            top: 9vh;
+            top: 8vh;
             align-items: center;
 
             background-color: $color-back;
             transform: translateX(100%);
             transition: transform 0.5s ease-in;
-            
+
 
             li {
                 opacity: 0;
-                
+
             }
         }
 
@@ -238,11 +239,29 @@ body {
     margin-top: -8vh;
     padding-top: 8vh;
 
-    h2 {
-        padding-top: 8vh;
-        color: $color-nav;
-        font-weight: normal;
-        // border: $border-standard;
+    .project-header {
+        h2 {
+            padding-top: 8vh;
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding-bottom: 15px;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: $color-nav;
+            z-index: -1;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            width: 50px;
+            height: 2px;
+            background-color: $color-nav;
+            box-sizing: border-box;
+        }
     }
 
     .project-container {
@@ -266,5 +285,34 @@ body {
 // Style services
 
 .services {
-    font-size: 40px;
+    padding: 9vh 5vw;
+    text-align: center;
+    
+    .service-header {
+        font-size: 1.5em;
+
+        // letter-spacing: 4px;
+        h2 {
+            position: relative;
+            display: inline-block;
+            margin: 0;
+            padding-bottom: 15px;
+            font-size: 36px;
+            font-weight: 700;
+            text-transform: capitalize;
+            color: $color-nav;
+            padding-top: 8vh;
+            z-index: -1;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 4px;
+            width: 50px;
+            height: 2px;
+            background-color: $color-nav;
+            box-sizing: border-box;
+        }
+    }
 }
