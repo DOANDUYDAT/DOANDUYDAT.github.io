@@ -24,11 +24,12 @@ body {
   padding: 1vh;
   text-transform: uppercase;
   letter-spacing: 5px;
-  font-size: 20px;
+  font-size: 40px;
 }
 .navbar .nav-links {
   display: flex;
   justify-content: space-between;
+  margin: 0;
   width: 50%;
 }
 .navbar .nav-links li {
@@ -71,17 +72,15 @@ body {
   }
   .navbar .nav-links {
     position: absolute;
-    right: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 92vh;
+    height: 93vh;
     width: 100%;
-    top: 8vh;
     align-items: center;
     background-color: #e9ebea;
-    transform: translateX(100%);
-    transition: transform 0.5s ease-in;
+    transform: translateY(-100%);
+    transition: transform 0.5s ease-out;
   }
   .navbar .nav-links li {
     opacity: 0;
@@ -90,7 +89,8 @@ body {
     display: block;
   }
   .navbar .nav-change {
-    transform: translateX(0%);
+    transform: translateY(0);
+    top: 50px;
   }
 }
 @keyframes navLinkFade {
@@ -114,7 +114,7 @@ body {
 }
 
 .intro {
-  background-image: url("girl wallpaper.jpg");
+  background-image: url("wall-paper.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -172,7 +172,8 @@ body {
     flex-direction: column;
     justify-content: center;
   }
-  .about-detail .about-me, .about-detail .skills {
+  .about-detail .about-me,
+.about-detail .skills {
     width: 80%;
     padding: 2em 0;
   }
