@@ -22,12 +22,12 @@ body {
     font-family: 'Poppins', sans-serif;
     // background-color: $color-back;
     transition: all 0.5s ease-in-out;
-    height: 8vh;
+    height: 50px;
     position: fixed;
     width: 100%;
 
     .logo {
-        color: $color-nav;
+        color: $color-back2;
         padding: 1vh;
         text-transform: uppercase;
         letter-spacing: 5px;
@@ -49,10 +49,10 @@ body {
             font-size: 14px;
             letter-spacing: 3px;
             font-weight: bold;
-            color: $color-nav;
+            color: $color-back2;
 
             &:hover {
-                text-decoration: underline;
+                color: rgb(255, 145, 0);
             }
         }
     }
@@ -62,7 +62,7 @@ body {
         cursor: pointer;
 
         div {
-            background-color: $color-nav;
+            background-color: $color-back2;
             width: 25px;
             height: 3px;
             margin: 5px;
@@ -155,7 +155,7 @@ body {
 
 .intro {
 
-    background-image: url("https://sobify.com/wp-content/uploads/2014/06/Colorful-Dark-Background.jpg");
+    background-image: url("girl wallpaper.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -165,12 +165,14 @@ body {
 
     h1 {
         font-weight: 600;
-        color: $color-back;
+        color: $color-back2;
+        font-size: 42px;
     }
 
     p {
-        color: green;
+        color: rgb(0, 147, 173);
         font-weight: lighter;
+        font-size: 22px;
     }
 }
 
@@ -183,52 +185,52 @@ body {
     // border: $border-standard;
     padding: 8vh 0;
 
-}
-
-.about-me {
-
-    // text-align: start;
-    width: 40%;
-    // border: $border-standard;
-}
-
-.skills {
-
-    width: 30%;
-    line-height: 2em;
-    // height: 40%;
-    // border: $border-standard;
-}
-
-.progress-bar {
-
-    // border: $border-standard;   
-    h6 {
-        font-size: 1rem;
-        font-weight: 550;
+    .about-me {
+        width: 40%;
     }
 
-    .progress-bar-lt {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    .skills {
+
+        width: 30%;
+        line-height: 2em;
+
+        .progress-bar {
+            .progress-bar-lt {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                h6 {
+                    font-size: 1rem;
+                    font-weight: 550;
+                }
+            }
+
+            .progress-bar-skills {
+                background-color: lightgray;
+                border-radius: 12px;
+                transition: all 1.6s ease-out;
+
+                .progress-bar-line {
+
+                    height: 6px;
+                    border-radius: 12px;
+                    background-color: $color-back2;
+
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+        justify-content: center;
+        .about-me, .skills {
+            width: 80%;
+            padding: 2em 0;
+        }
+        
     }
 }
-
-.progress-bar-skills {
-    background-color: lightgray;
-    border-radius: 12px;
-    transition: all 1.6s ease-out;
-
-    .progress-bar-line {
-
-        height: 6px;
-        border-radius: 12px;
-        background-color: $color-back2;
-
-    }
-}
-
 
 
 // Style projects
@@ -252,6 +254,7 @@ body {
             color: $color-nav;
             z-index: -1;
         }
+
         h2::after {
             content: '';
             position: absolute;
@@ -287,7 +290,7 @@ body {
 .services {
     padding: 9vh 5vw;
     text-align: center;
-    
+
     .service-header {
         font-size: 1.5em;
 
@@ -304,6 +307,7 @@ body {
             padding-top: 8vh;
             z-index: -1;
         }
+
         h2::after {
             content: '';
             position: absolute;

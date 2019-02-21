@@ -42,7 +42,7 @@ window.onscroll = function () {
 function scrollFunction() {
     const navbar = document.querySelector('.navbar');
     if (document.documentElement.scrollTop > 100) {
-        navbar.style.backgroundColor = "#e0ebe8";
+        navbar.style.backgroundColor = "#e9ebea";
     } else {
         navbar.style.backgroundColor = "transparent";
     }

@@ -15,12 +15,12 @@ body {
   align-items: center;
   font-family: "Poppins", sans-serif;
   transition: all 0.5s ease-in-out;
-  height: 8vh;
+  height: 50px;
   position: fixed;
   width: 100%;
 }
 .navbar .logo {
-  color: #0c9b9b;
+  color: #353535;
   padding: 1vh;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -39,17 +39,17 @@ body {
   font-size: 14px;
   letter-spacing: 3px;
   font-weight: bold;
-  color: #0c9b9b;
+  color: #353535;
 }
 .navbar .nav-links a:hover {
-  text-decoration: underline;
+  color: #ff9100;
 }
 .navbar .burger {
   display: none;
   cursor: pointer;
 }
 .navbar .burger div {
-  background-color: #0c9b9b;
+  background-color: #353535;
   width: 25px;
   height: 3px;
   margin: 5px;
@@ -79,7 +79,7 @@ body {
     width: 100%;
     top: 8vh;
     align-items: center;
-    background-color: #e0ebe8;
+    background-color: #e9ebea;
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
   }
@@ -114,7 +114,7 @@ body {
 }
 
 .intro {
-  background-image: url("https://sobify.com/wp-content/uploads/2014/06/Colorful-Dark-Background.jpg");
+  background-image: url("girl wallpaper.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -124,11 +124,13 @@ body {
 }
 .intro h1 {
   font-weight: 600;
-  color: #e0ebe8;
+  color: #353535;
+  font-size: 42px;
 }
 .intro p {
-  color: green;
+  color: #0093ad;
   font-weight: lighter;
+  font-size: 22px;
 }
 
 .about-detail {
@@ -136,38 +138,44 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #e0ebe8;
+  background-color: #e9ebea;
   padding: 8vh 0;
 }
-
-.about-me {
+.about-detail .about-me {
   width: 40%;
 }
-
-.skills {
+.about-detail .skills {
   width: 30%;
   line-height: 2em;
 }
-
-.progress-bar h6 {
-  font-size: 1rem;
-  font-weight: 550;
-}
-.progress-bar .progress-bar-lt {
+.about-detail .skills .progress-bar .progress-bar-lt {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
-.progress-bar-skills {
+.about-detail .skills .progress-bar .progress-bar-lt h6 {
+  font-size: 1rem;
+  font-weight: 550;
+}
+.about-detail .skills .progress-bar .progress-bar-skills {
   background-color: lightgray;
   border-radius: 12px;
   transition: all 1.6s ease-out;
 }
-.progress-bar-skills .progress-bar-line {
+.about-detail .skills .progress-bar .progress-bar-skills .progress-bar-line {
   height: 6px;
   border-radius: 12px;
-  background-color: #4f4f4f;
+  background-color: #353535;
+}
+@media screen and (max-width: 768px) {
+  .about-detail {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .about-detail .about-me, .about-detail .skills {
+    width: 80%;
+    padding: 2em 0;
+  }
 }
 
 .projects {
