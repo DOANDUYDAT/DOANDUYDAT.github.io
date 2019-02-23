@@ -327,6 +327,11 @@ body {
         margin: 0 auto;
         margin-top: 20px;
         padding-bottom: 40%;
+        @media screen and (max-width: 768px){
+            width: 80vw;
+            padding-bottom: 52vh;
+            border-radius: 10px;
+        }
         input[type='radio'] {
             display: none;
         }
@@ -358,8 +363,8 @@ body {
             
             position: absolute;
             width: 100%;
-            height: 11px;
-            bottom: 10%;
+            // height: 11px;
+            bottom: 5%;
             text-align: center;
             z-index: 20;
             .dots {
@@ -373,6 +378,11 @@ body {
                 // display: block;
                 margin: 0 4px;
                 cursor: pointer;
+                @media screen and (max-width: 768px) {
+                    width: 10px;
+                    height: 10px;
+                    margin: 0 2px;
+                }
             }
         }
         #i1:checked ~ #one,
@@ -387,4 +397,13 @@ body {
         }
     }
 }
-
+.contact {
+    display: grid;
+    grid-template-rows: 10%;
+    text-align: center;
+    vertical-align: middle;
+    height: 30%;
+    background-color: $color-back;
+    align-content: center;
+    color: $color-back2;
+}
