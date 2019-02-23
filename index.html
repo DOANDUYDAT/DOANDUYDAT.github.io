@@ -125,11 +125,29 @@
             <h2>My Services</h2>
         </div>
         <div class="service-detail">
-            <div class="service-icon">
+            <input type="radio" id="i1" name="images" checked>
+            <input type="radio" id="i2" name="images">
+            <input type="radio" id="i3" name="images">
 
+            <div class="slide-img" id="one">
+                <img src="http://phydeve.epizy.com/imozar/img/wok-2.jpg" alt="">
+                <label for="i3" class="pre"></label>
+                <label for="i2" class="nxt"></label>
             </div>
-            <div class="service-content">
-                
+            <div class="slide-img" id="two">
+                <img src="http://phydeve.epizy.com/imozar/img/wok-6.jpg" alt="">
+                <label for="i1" class="pre"></label>
+                <label for="i3" class="nxt"></label>
+            </div>
+            <div class="slide-img" id="three">
+                <img src="http://phydeve.epizy.com/imozar/img/wok-4.jpg" alt="">
+                <label for="i2" class="pre"></label>
+                <label for="i1" class="nxt"></label>
+            </div>
+            <div class="dots-nav">
+                <label for="i1" id="dot1" class="dots"></label>
+                <label for="i2" id="dot2" class="dots"></label>
+                <label for="i3" id="dot3" class="dots"></label>
             </div>
         </div>
     </div>

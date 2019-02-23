@@ -1,6 +1,8 @@
 html,
 body {
   scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
 }
 
 * {
@@ -14,6 +16,7 @@ body {
   justify-content: space-around;
   align-items: center;
   font-family: "Poppins", sans-serif;
+  z-index: 10;
   transition: all 0.5s ease-in-out;
   height: 50px;
   position: fixed;
@@ -74,8 +77,8 @@ body {
     position: absolute;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    height: 93vh;
+    justify-content: space-evenly;
+    height: 50vh;
     width: 100%;
     align-items: center;
     background-color: #e9ebea;
@@ -180,31 +183,14 @@ body {
 }
 
 .projects {
-  text-align: center;
   margin-top: -8vh;
   padding-top: 8vh;
 }
-.projects .project-header h2 {
-  padding-top: 8vh;
-  position: relative;
-  display: inline-block;
-  margin: 0;
-  padding-bottom: 15px;
-  font-size: 36px;
-  font-weight: 700;
-  text-transform: capitalize;
-  color: #0c9b9b;
-  z-index: -1;
+.projects .project-header {
+  text-align: center;
 }
-.projects .project-header h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 4px;
-  width: 50px;
-  height: 2px;
-  background-color: #0c9b9b;
-  box-sizing: border-box;
+.projects .project-header h2 {
+  padding-top: 10vh;
 }
 .projects .project-container {
   margin-top: 8vh;
@@ -221,14 +207,7 @@ body {
   border: 1px solid black;
 }
 
-.services {
-  padding: 9vh 5vw;
-  text-align: center;
-}
-.services .service-header {
-  font-size: 1.5em;
-}
-.services .service-header h2 {
+.services .service-header h2, .projects .project-header h2 {
   position: relative;
   display: inline-block;
   margin: 0;
@@ -237,10 +216,10 @@ body {
   font-weight: 700;
   text-transform: capitalize;
   color: #0c9b9b;
-  padding-top: 8vh;
   z-index: -1;
 }
-.services .service-header h2::after {
+
+.services .service-header h2::after, .projects .project-header h2::after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -249,6 +228,82 @@ body {
   height: 2px;
   background-color: #0c9b9b;
   box-sizing: border-box;
+}
+
+.services {
+  padding-top: 10vh;
+}
+.services .service-header {
+  font-size: 1.5em;
+  text-align: center;
+}
+.services .service-header h2 {
+  margin-top: 8vh;
+}
+.services .service-detail {
+  background-color: #4c4c4c;
+  border: 2px solid #2c2c2c;
+  position: relative;
+  width: 70%;
+  height: 0;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding-bottom: 40%;
+}
+.services .service-detail input[type=radio] {
+  display: none;
+}
+.services .service-detail .slide-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.services .service-detail .slide-img img {
+  width: 100%;
+  height: 100%;
+}
+.services .service-detail .slide-img .pre, .services .service-detail .slide-img .nxt {
+  position: absolute;
+  top: 0;
+  width: 12%;
+  height: 100%;
+  background: rgba(88, 88, 88, 0.4);
+  cursor: pointer;
+}
+.services .service-detail .slide-img .pre {
+  left: 0;
+}
+.services .service-detail .slide-img .nxt {
+  right: 0;
+}
+.services .service-detail .dots-nav {
+  position: absolute;
+  width: 100%;
+  height: 11px;
+  bottom: 10%;
+  text-align: center;
+  z-index: 20;
+}
+.services .service-detail .dots-nav .dots {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background: rgba(88, 88, 88, 0.4);
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 4px;
+  cursor: pointer;
+}
+.services .service-detail #i1:checked ~ #one,
+.services .service-detail #i2:checked ~ #two,
+.services .service-detail #i3:checked ~ #three {
+  z-index: 9;
+}
+.services .service-detail #i1:checked ~ .dots-nav #dot1,
+.services .service-detail #i2:checked ~ .dots-nav #dot2,
+.services .service-detail #i3:checked ~ .dots-nav #dot3 {
+  background-color: #202020;
 }
 
 /*# sourceMappingURL=style.css.map */
